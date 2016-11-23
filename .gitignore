@@ -9,3 +9,5 @@ wordCount/src/wordCount/*/*.swp
 
 # Folder containing files after build
 BUILD/*
+
+README.txt
