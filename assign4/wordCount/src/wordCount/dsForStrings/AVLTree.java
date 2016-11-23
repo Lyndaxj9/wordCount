@@ -20,18 +20,30 @@ public class AVLTree {
         root = rootIN;
     }
 
+    /**
+     * @return boolean True if the tree is empty
+     */
     public boolean isEmpty() {
         return root == null;
     }
 
+    /**
+     * @return AVLNode the root of the tree
+     */
     public AVLNode getRoot() {
         return root;
     }
 
+    /**
+     * @return int the height of the tree
+     */
     public int height(AVLNode t) {
         return t == null ? -1 : t.getHeight();
     }
 
+    /**
+     * @return int the tree with more height
+     */
     public int maxHeight(int lhs, int rhs) {
         return lhs > rhs ? lhs : rhs;
     }
@@ -40,6 +52,11 @@ public class AVLTree {
         root = insert(wordIN, root);
     }
 
+    /**
+     * @return AVLNode the root for the tree that was inserted into
+     * The root is returned just in case it was changed in the process
+     * of rebalancing
+     */
     public AVLNode insert(String wordIN, AVLNode t) {
         if(t == null){
             t = new AVLNode(wordIN);
@@ -76,6 +93,9 @@ public class AVLTree {
         return t;
     }
 
+    /**
+     * @return AVLNode 
+     */
     private AVLNode rotateWLeftChild(AVLNode k2) {
         AVLNode k1 = k2.left;
         k2.left = k1.right;
@@ -85,6 +105,9 @@ public class AVLTree {
         return k1;
     }
 
+    /**
+     * @return AVLNode
+     */
     private AVLNode rotateWRightChild(AVLNode k1) {
         AVLNode k2 = k1.right;
         k1.right = k2.left;
@@ -94,11 +117,17 @@ public class AVLTree {
         return k2;
     }
 
+    /**
+     * @return AVLNode
+     */
     private AVLNode doubleWLeftChild(AVLNode k3) {
         k3.left = rotateWRightChild(k3.left);
         return rotateWLeftChild(k3);
     }
 
+    /**
+     * @return AVLNode
+     */
     private AVLNode doubleWRightChild(AVLNode k4) {
         k4.right = rotateWLeftChild(k4.right);
         return rotateWRightChild(k4);
@@ -130,6 +159,9 @@ public class AVLTree {
         }
     }
 
+    /**
+     * @return int the count for that word
+     */ 
     public int search(String val) {
         return search(root, val);
     }

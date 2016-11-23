@@ -4,6 +4,10 @@ import wordCount.dsForStrings.AVLTree;
 import wordCount.util.Logger;
 import wordCount.util.FileProcessor;
 
+/**
+ * Visitor for reading a text file and populating a tree with all
+ * the words that occur in the file
+ */
 public class PopulateVisitor implements VisitorInterface {
     private static Logger log = Logger.getInstance();
     private FileProcessor fileProc;

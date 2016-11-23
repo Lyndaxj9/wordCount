@@ -7,8 +7,6 @@ import wordCount.visitors.WordCountVisitor;
 import wordCount.visitors.CloneObserveVisitor;
 import wordCount.visitors.UpdateVisitor;
 
-import wordCount.dsForStrings.AVLNode;
-
 public class Driver {
 
     public static void main(String[] args) {
@@ -23,6 +21,11 @@ public class Driver {
                 input = args[0];
                 output = args[1];
                 numIterations = Integer.parseInt(args[2]);
+
+                if(numIterations <= 0) {
+                    System.out.println("Please enter a positive number greater than 0!");
+                    System.exit(1);
+                }
 
             } catch(NumberFormatException e) {
                 e.printStackTrace();
@@ -66,7 +69,7 @@ public class Driver {
         System.out.printf("Total Time: %d milliseconds\n", totalTime);
 
 //-- CLONE AND OBSERVER TREE
-        if (wordTree.getRoot() != null) {
+        if (!wordTree.isEmpty()) {
             VisitorInterface cov = new CloneObserveVisitor();
             VisitorInterface uv = new UpdateVisitor(3);
             wordTree.accept(cov);

@@ -5,6 +5,10 @@ import wordCount.dsForStrings.AVLNode;
 import wordCount.util.Logger;
 import wordCount.util.FileProcessor;
 
+/**
+ * Visitor for cloning nodes and setting up the observer/subject
+ * relationship
+ */
 public class CloneObserveVisitor implements VisitorInterface {
     private static Logger log = Logger.getInstance();
 

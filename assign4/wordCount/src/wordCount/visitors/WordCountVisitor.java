@@ -5,6 +5,9 @@ import wordCount.dsForStrings.AVLNode;
 import wordCount.util.Logger;
 import wordCount.util.FileProcessor;
 
+/**
+ * Visitor for going through the tree and calculating various counts
+ */
 public class WordCountVisitor implements VisitorInterface {
     private static Logger log = Logger.getInstance();
     private FileProcessor fileProc;

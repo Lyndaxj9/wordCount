@@ -12,6 +12,8 @@ public class AVLNode implements Cloneable {
     AVLNode left, right;
     String data;
     int count, height;
+
+    //Holds the observers to the original node
     ArrayList<AVLNode> observers = new ArrayList<AVLNode>();
 
     public AVLNode() {
@@ -30,10 +32,16 @@ public class AVLNode implements Cloneable {
         height = 0;
     }
 
+    /**
+     * @return String containing the data which is the word
+     */
     public String getData() {
         return data;
     }
 
+    /**
+     * @return AVLNode the left node
+     */
     public AVLNode getLeft() {
         return left;
     }
@@ -42,6 +50,9 @@ public class AVLNode implements Cloneable {
         left = nL;
     }
 
+    /**
+     * @return AVLNode the right node
+     */
     public AVLNode getRight() {
         return right;
     }
@@ -50,10 +61,17 @@ public class AVLNode implements Cloneable {
         right = nR;
     }
 
+    /**
+     * @return int the height of the node
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * @return int the count, the amount of time the data (word)
+     * appeared in the file
+     */
     public int getCount() {
         return count;
     }
@@ -86,6 +104,10 @@ public class AVLNode implements Cloneable {
         }
     }
 
+    /**
+     * @return AVLNode the observer node at the index in the
+     * ArrayList
+     */
     public AVLNode getObserver(int index) {
         return observers.get(index);
     }
@@ -94,6 +116,9 @@ public class AVLNode implements Cloneable {
         count *= multiplier;
     }
 
+    /**
+     * @return Object and AVLNode with the information from this node
+     */
     public Object clone() {
         
         AVLNode aClone = new AVLNode(data);

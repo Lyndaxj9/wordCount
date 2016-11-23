@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 
 /**
- *
+ * Basic file processor that can be used for the reading and writing
+ * of files
  */
 public class FileProcessor {
     private static Logger log = Logger.getInstance();

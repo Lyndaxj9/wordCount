@@ -5,6 +5,10 @@ import wordCount.dsForStrings.AVLNode;
 import wordCount.util.Logger;
 import wordCount.util.FileProcessor;
 
+/**
+ * Visitor for updating the original tree to trigger the observer
+ * and show that the subject/observer pattern is working
+ */
 public class UpdateVisitor implements VisitorInterface {
     private static Logger log = Logger.getInstance();
     private FileProcessor fileProc;
