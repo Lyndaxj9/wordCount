@@ -1,0 +1,10 @@
+# Generated Java files
+*.class
+
+# Vim Files
+*.swp
+wordCount/src/wordCount/driver/*.swp
+wordCount/src/wordCount/*/*.swp
+
+# Folder containing files after build
+BUILD/*
